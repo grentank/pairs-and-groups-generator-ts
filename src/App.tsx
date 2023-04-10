@@ -13,6 +13,10 @@ function App(): JSX.Element {
     'аня',
     'маша',
     'вика',
+    'даун',
+    'алексей',
+    'ренат',
+    'дима',
   ];
 
   console.log(createMap(students));

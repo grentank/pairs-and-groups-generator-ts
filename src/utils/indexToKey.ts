@@ -1,4 +1,4 @@
-import type { DaysKeyType, WeeksAndDaysType } from '../types/keysTypes';
+import type { DayKeyType, WeeksAndDaysType } from '../types/keysTypes';
 
 export const weeksAndDays: WeeksAndDaysType = [
   'w1d1',
@@ -12,7 +12,7 @@ export const weeksAndDays: WeeksAndDaysType = [
   'w3d5',
 ];
 
-export default function indexToKey(index: number): DaysKeyType {
+export default function indexToKey(index: number): DayKeyType {
   const foundKey = weeksAndDays.find((_, ind) => index === ind);
   return foundKey || 'w1d1';
 }

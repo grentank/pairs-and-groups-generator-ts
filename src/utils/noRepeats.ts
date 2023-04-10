@@ -8,19 +8,13 @@ export default function noRepeats(
   day: DayKeyType,
   students: StudentType[],
 ): boolean {
-  // console.log(pairsAndGroups);
-  // console.log(randomPairOrGroup);
-  // console.log(day);
   for (const studentName of randomPairOrGroup) {
-    // console.log(studentName, 'name');
     for (const thisDayPairOrGroup of pairsAndGroups[day]) {
-      // console.log(thisDayPairOrGroup, '[]');
       if (thisDayPairOrGroup.includes(studentName)) return false;
     }
 
     const targetStudent = students.find((student) => student.name === studentName);
     for (const otherStudentName of randomPairOrGroup) {
-      // console.log(otherStudentName, 'othername');
       if (targetStudent?.hasBeenWith.includes(otherStudentName)) return false;
     }
   }

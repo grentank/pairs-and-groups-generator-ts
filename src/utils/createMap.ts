@@ -5,10 +5,11 @@ import generatePairs from './generatePairs';
 import { weeksAndDays } from './indexToKey';
 import { isGroupsDay, isPairsDay } from '../types/guards';
 
-export default function createMap(names: string[]): void {
+export default function createMap(names: string[]): [a: PairsAndGroupsType, b: StudentType[]] {
   const pairsAndGroups = {} as PairsAndGroupsType;
   const students = names.map((studentsName) => {
-    const targetObj = { name: studentsName } as StudentType;
+    const targetObj = { name: studentsName, hasBeenWith: [] as string[] } as StudentType;
+
     weeksAndDays.forEach((day) => {
       targetObj[day] = [];
       pairsAndGroups[day] = [];
@@ -22,4 +23,5 @@ export default function createMap(names: string[]): void {
   });
 
   console.log(pairsAndGroups);
+  return [pairsAndGroups, students];
 }
